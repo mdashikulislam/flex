@@ -6,6 +6,7 @@ $lang_search = array(
 // The search form
 'User search'						=>	'User search',
 'No search permission'				=>	'You do not have permission to use the search feature.',
+'No visit permission'				=>	'You do not have permission to use the page visit  feature.',
 'Search flood'						=>	'At least %s seconds have to pass between searches. Please wait %s seconds and try searching again.',
 'Search'							=>	'Search',
 'Page Visit'						=>	'Page Visit',

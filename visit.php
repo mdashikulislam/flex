@@ -15,7 +15,9 @@ require PUN_ROOT.'include/common.php';
 // Load the search.php language file
 require PUN_ROOT.'lang/'.$pun_user['language'].'/search.php';
 require PUN_ROOT.'lang/'.$pun_user['language'].'/forum.php';
-
+if ($pun_user['g_id'] != 1){
+    message($lang_search['No visit permission'], false, '403 Forbidden');
+}
 
 if ($pun_user['g_read_board'] == '0')
     message($lang_common['No view'], false, '403 Forbidden');

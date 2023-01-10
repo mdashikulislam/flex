@@ -135,13 +135,7 @@ $forum_date_formats = array($pun_config['o_date_format'], 'Y-m-d', 'Y-d-m', 'd-m
 $pun_user = array();
 check_cookie($pun_user);
 
-if ($pun_user['id'] > 1){
-    $userId = $pun_user['id'];
-    $requestMethod = $_SERVER['REQUEST_METHOD'];
-    $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";;
-    $sql = "INSERT INTO page_visits (user_id,url,request_method) VALUES ('$userId','$actual_link','$requestMethod')";
-    $db->query($sql);
-}
+
 
 
 // Attempt to load the common language file
@@ -202,4 +196,11 @@ if (!isset($sf_array_tree))
 
 	generate_subforums_cache($pun_user['g_id']);
 	require FORUM_CACHE_DIR.'cache_subforums_'.$pun_user['g_id'].'.php';
+}
+if ($pun_user['id'] > 1){
+    $userId = $pun_user['id'];
+    $requestMethod = $_SERVER['REQUEST_METHOD'];
+    $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";;
+    $sql = "INSERT INTO page_visits (user_id,url,request_method) VALUES ('$userId','$actual_link','$requestMethod')";
+    $db->query($sql);
 }
