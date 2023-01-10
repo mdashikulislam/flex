@@ -163,6 +163,7 @@ $lang_common = array(
 'Atom forum feed'					=>	'Atom forum feed',
 'RSS topic feed'					=>	'RSS topic feed',
 'Atom topic feed'					=>	'Atom topic feed',
+'Page Visit'					    =>	'Page Visit',
 
 'After time'	=>   'Added later',
 'After time s'	=>   ' s',

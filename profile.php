@@ -1608,6 +1608,7 @@ else
 
 		$page_title = array(pun_htmlspecialchars($pun_config['o_board_title']), $lang_common['Profile'], $lang_profile['Section personality']);
 		define('PUN_ACTIVE_PAGE', 'profile');
+		define('PUN_ACTIVE_VISIT', 'visit');
 		require PUN_ROOT.'header.php';
 
 		generate_profile_menu('personality');

@@ -210,6 +210,7 @@ if ($pun_user['is_guest'])
 else
 {
 	$links[] = '<li id="navprofile"'.((PUN_ACTIVE_PAGE == 'profile') ? ' class="isactive"' : '').'><a href="profile.php?id='.$pun_user['id'].'">'.$lang_common['Profile'].'</a></li>';
+	$links[] = '<li id="navvisit"'.((PUN_ACTIVE_PAGE == 'visit') ? ' class="isactive"' : '').'><a href="visit.php">'.$lang_common['Page Visit'].'</a></li>';
 // New PMS
 	if ($pun_config['o_pms_enabled'] == '1' && ($pun_user['g_pm'] == 1 || $pun_user['messages_new'] > 0))
 		$links[] = '<li id="navpmsnew"'.((PUN_ACTIVE_PAGE == 'pms_new' || $pun_user['messages_new'] > 0) ? ' class="isactive"' : '').'><a href="pmsnew.php">'.$lang_common['PM'].(($pun_user['messages_new'] > 0) ? ' (<span'.((empty($pun_config['o_pms_flasher']) || PUN_ACTIVE_PAGE == 'pms_new') ? '' : ' class="remflasher"' ).'>'.$pun_user['messages_new'].'</span>)' : '').'</a></li>';
