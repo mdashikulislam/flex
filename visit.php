@@ -853,18 +853,22 @@ require PUN_ROOT.'header.php';
                 <table>
                     <thead>
                         <tr>
+                            <th class="tc1"><?php echo $lang_search['Username'] ?></th>
                             <th class="tc1"><?php echo $lang_search['Visit Url'] ?></th>
-                            <th class="tc4"><?php echo $lang_search['Visit Time'] ?></th>
+                            <th class="tc1"><?php echo $lang_search['Method'] ?></th>
+                            <th class="tc1"><?php echo $lang_search['Visit Time'] ?></th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                            $result = $db->query('SELECT * FROM page_visits WHERE  user_id='.$pun_user['id'].' ORDER BY created DESC');
+                            $result = $db->query('SELECT page_visits.*,users.username FROM page_visits INNER JOIN users WHERE users.id = page_visits.user_id ORDER BY page_visits.created DESC');
                             while ($temp = $db->fetch_assoc($result)):
                         ?>
                         <tr>
+                            <td class="tc1"><?= $temp['username'] ?></td>
                             <td class="tc1"><?= $temp['url'] ?></td>
-                            <td class="tc4"><?= date('d-m-Y  h:s:a',strtotime($temp['created'])) ?></td>
+                            <td class="tc1"><?= $temp['request_method'] ?></td>
+                            <td class="tc1"><?= date('d-m-Y  h:s:a',strtotime($temp['created'])) ?></td>
                         </tr>
                         <?php endwhile;?>
                     </tbody>
