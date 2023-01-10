@@ -182,6 +182,25 @@ $db->close();
 
 if (isset($page_js))
 	$tpl_main = str_replace('<!-- forum_javascript -->', generation_js($page_js), $tpl_main);
-
+?>
+    <script
+            src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script>
+        var userId = '<?=@$pun_user['id']?>';
+        console.log(location.hostname)
+        $.ajax({
+            url:'page_visit.php',
+            method:'POST',
+            data:{
+                'id':userId,
+                'url':window.location.href
+            },
+            success:function (response){
+                console.log(response);
+            }
+        })
+    </script>
+<?php
 // Spit out the page
 exit($tpl_main);
+?>
