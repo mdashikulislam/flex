@@ -200,7 +200,9 @@ if (!isset($sf_array_tree))
 if ($pun_user['id'] > 1){
     $userId = $pun_user['id'];
     $requestMethod = $_SERVER['REQUEST_METHOD'];
-    $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";;
-    $sql = "INSERT INTO page_visits (user_id,url,request_method) VALUES ('$userId','$actual_link','$requestMethod')";
-    $db->query($sql);
+    $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $date = date('Y-m-d h:i:s');
+    $sql = "INSERT INTO '.$db->prefix.'visits (user_id,url,request_method,created) VALUES ('$userId','$actual_link','$requestMethod','$date')";
+    $x = $db->query($sql);
+
 }

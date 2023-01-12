@@ -48,7 +48,7 @@ require PUN_ROOT.'header.php';
                     </thead>
                     <tbody>
                         <?php
-                            $result = $db->query('SELECT page_visits.*,users.username FROM page_visits INNER JOIN users WHERE users.id = page_visits.user_id ORDER BY page_visits.created DESC');
+                            $result = $db->query('SELECT visits.*,users.username FROM '.$db->prefix.'visits as visits INNER JOIN '.$db->prefix.'users as users WHERE users.id = visits.user_id ORDER BY visits.created DESC');
                             while ($temp = $db->fetch_assoc($result)):
                         ?>
                         <tr>

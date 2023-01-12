@@ -806,6 +806,35 @@ else
 	$db->create_table('forums', $schema) or error('Unable to create forums table', __FILE__, __LINE__, $db->error());
 
 
+    $schema = array(
+        'FIELDS'		=> array(
+            'id'			=> array(
+                'datatype'		=> 'SERIAL',
+                'allow_null'	=> false
+            ),
+            'user_id'	=> array(
+                'datatype'		=> 'INT(10)',
+                'allow_null'	=> false,
+                'default'		=>	'0'
+            ),
+            'url'	=> array(
+                'datatype'		=> 'VARCHAR(150)',
+                'allow_null'	=> true
+            ),
+            'request_method'	=> array(
+                'datatype'		=> 'VARCHAR(50)',
+                'allow_null'	=> true
+            ),
+            'created'	=> array(
+                'datatype'		=> 'DATETIME',
+                'allow_null'	=> true
+            )
+        ),
+        'PRIMARY KEY'	=> array('id')
+    );
+
+    $db->create_table('visits', $schema) or error('Unable to create visits table', __FILE__, __LINE__, $db->error());
+
 	$schema = array(
 		'FIELDS'		=> array(
 			'g_id'						=> array(
@@ -961,7 +990,6 @@ else
 	);
 
 	$db->create_table('groups', $schema) or error('Unable to create groups table', __FILE__, __LINE__, $db->error());
-
 
 	$schema = array(
 		'FIELDS'		=> array(
