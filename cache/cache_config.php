@@ -21,8 +21,8 @@ $pun_config = array (
   'o_check_ip' => '0',
   'o_coding_forms' => '1',
   'o_crypto_enable' => '1',
-  'o_crypto_pas' => 'O7TqzNYc7qDDDMqaVd87ef0qV',
-  'o_crypto_salt' => 'LI8if3-9jIYXU',
+  'o_crypto_pas' => 'C5MXVGFF8EPJZjvdSreP8rtD7',
+  'o_crypto_salt' => 'YGyPS3kCDE-6J',
   'o_cur_ver_revision' => '84',
   'o_cur_version' => '1.5.11',
   'o_database_revision' => '21',
@@ -70,9 +70,7 @@ $pun_config = array (
   'o_search_all_forums' => '1',
   'o_searchindex_revision' => '2.1',
   'o_sec_of_login' => '1.0.0',
-  'o_sec_of_login_time' => '1673542457',
-  'o_sec_of_register' => '1.0.0',
-  'o_sec_of_register_time' => '1673542456',
+  'o_sec_of_login_time' => '1673544127',
   'o_show_dot' => '0',
   'o_show_post_count' => '1',
   'o_show_user_info' => '1',
@@ -104,8 +102,8 @@ $pun_config = array (
   'p_sig_length' => '400',
   'p_sig_lines' => '4',
   'p_subject_all_caps' => '1',
-  'st_max_users' => '3',
-  'st_max_users_time' => '1673369317',
+  'st_max_users' => '1',
+  'st_max_users_time' => '1673544104',
 );
 
 ?>

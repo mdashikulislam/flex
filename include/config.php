@@ -5,17 +5,17 @@ $db_host = 'localhost';
 $db_name = 'fix';
 $db_username = 'root';
 $db_password = '';
-$db_prefix = '';
+$db_prefix = 'sd';
 $p_connect = false;
 
-$cookie_name = 'pun_cookie_f4cd35';
+$cookie_name = 'pun_cookie_e051d5';
 $cookie_domain = '';
 $cookie_path = '/';
 $cookie_secure = 0;
 $cookie_samesite = 'Lax'; // Strict, Lax or None
-$cookie_seed = '59a897b712116bac';
+$cookie_seed = 'bdf492b90ccc8b80';
 
-$salt1 = 'blNta4J2uII8AdW';
+$salt1 = 'YPvi3VoYROaxdkF';
 
 define('PUN', 1);
 
